@@ -4,8 +4,11 @@
 }
 
 body {
+  display: -ms-grid;
   display: grid;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   justify-items: center;
   background-color: whitesmoke;
   font-family: Arial, Helvetica, sans-serif;
@@ -33,7 +36,8 @@ body {
 .button {
   margin: 1vw;
   border: 3px solid black;
-  box-shadow: 8px 5px 10px grey;
+  -webkit-box-shadow: 8px 5px 10px grey;
+          box-shadow: 8px 5px 10px grey;
   padding: 10px;
   width: 25%;
   text-align: center;
@@ -46,33 +50,30 @@ body {
 }
 
 @media only screen and (min-width: 1020px) {
-
   #title-text {
     text-decoration: underline;
     text-align: center;
     margin: 10px 0px 30px 0px;
   }
-
   #bored {
     color: red;
   }
-
   #sub-text {
     margin: 7vw 0vw 2vw 0vw;
     text-align: center;
   }
-
   #random-activity {
     margin: 3vw;
     font-size: 20px;
   }
-
   .button {
     margin: 1vw;
     border: 3px solid black;
-    box-shadow: 8px 5px 10px grey;
+    -webkit-box-shadow: 8px 5px 10px grey;
+            box-shadow: 8px 5px 10px grey;
     padding: 10px;
     width: 25%;
     text-align: center;
   }
 }
+/*# sourceMappingURL=style.css.map */
