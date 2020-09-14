@@ -1,19 +1,24 @@
 
 class BoredActivity {
     content = "";
+    activityPost = document.getElementById("random-activity");
+    loadingPost = document.getElementById("random-activity");
+    errorPost = document.getElementById("random-activity");
 
     getActivity() {
         let activity = new XMLHttpRequest();
+        let holder = this;
+
         activity.onreadystatechange = function() {
             if(this.readyState == 4 && this.status == 200) {
                 let newActivity = JSON.parse(this.responseText);
                 console.log(newActivity);
-                document.getElementById("random-activity").innerHTML = newActivity.activity;
-                this.content = newActivity.activity;
+                holder.activityPost.innerHTML = newActivity.activity;
+                holder.content = newActivity.activity;
             } else if(this.readyState != 4) {
-                document.getElementById("random-activity").innerHTML = "Loading...";
+                holder.loadingPost.innerHTML = "Loading...";
             } else {
-                document.getElementById("random-activity").innerHTML = "Something went wrong..."
+                holder.errorPost.innerHTML = "Something went wrong..."
             }
         }
         activity.open("GET", "http://www.boredapi.com/api/activity/", true);
@@ -22,17 +27,19 @@ class BoredActivity {
 
 
     getGroupActivity() {
+        let holder = this;
         let groupActivity = new XMLHttpRequest();
+
         groupActivity.onreadystatechange = function() {
             if(this.readyState == 4 && this.status == 200) {
                 let newGroupActivity = JSON.parse(this.responseText);
                 console.log(newGroupActivity);
-                document.getElementById("random-activity").innerHTML = newGroupActivity.activity;
-                this.content = newGroupActivity.activity;
+                holder.activityPost.innerHTML = newGroupActivity.activity;
+                holder.content = newGroupActivity.activity;
             } else if(this.readyState != 4) {
-                document.getElementById("random-activity").innerHTML = "Loading...";
+                holder.loadingPost.innerHTML = "Loading...";
             } else {
-                document.getElementById("random-activity").innerHTML = "Something went wrong..."
+               holder.errorPost.innerHTML = "Something went wrong..."
             }
         }
         groupActivity.open("GET", "http://www.boredapi.com/api/activity?participants=4", true);
@@ -41,17 +48,19 @@ class BoredActivity {
 
 
     getFreeActivity() {
+        let holder = this;
         let freeActivity = new XMLHttpRequest();
+
         freeActivity.onreadystatechange = function() {
             if(this.readyState == 4 && this.status == 200) {
                 let newFreeActivity = JSON.parse(this.responseText);
                 console.log(newFreeActivity);
-                document.getElementById("random-activity").innerHTML = newFreeActivity.activity;
-                this.content = newFreeActivity.activity;
+                holder.activityPost.innerHTML = newFreeActivity.activity;
+                holder.content = newFreeActivity.activity;
             } else if(this.readyState != 4) {
-                document.getElementById("random-activity").innerHTML = "Loading...";
+                holder.loadingPost.innerHTML = "Loading...";
             } else {
-                document.getElementById("random-activity").innerHTML = "Something went wrong..."
+                holder.errorPost.innerHTML = "Something went wrong..."
             }
         }
         freeActivity.open("GET", "http://www.boredapi.com/api/activity?participants=1", true);
@@ -61,16 +70,18 @@ class BoredActivity {
 
     getRecreationalActivity() {
         let recActivity = new XMLHttpRequest();
+        let holder = this;
+
         recActivity.onreadystatechange = function() {
             if(this.readyState == 4 && this.status == 200) {
                 let newRecActivity = JSON.parse(this.responseText);
                 console.log(newRecActivity);
-                document.getElementById("random-activity").innerHTML = newRecActivity.activity;
-                this.content = newRecActivity.activity;
+                holder.activityPost.innerHTML = newRecActivity.activity;
+                holder.content = newRecActivity.activity;
             } else if(this.readyState != 4) {
-                document.getElementById("random-activity").innerHTML = "Loading...";
+                holder.loadingPost.innerHTML = "Loading...";
             } else {
-                document.getElementById("random-activity").innerHTML = "Something went wrong..."
+                holder.errorPost.innerHTML = "Something went wrong..."
             }
         }
         recActivity.open("GET", "http://www.boredapi.com/api/activity?type=recreational", true);
